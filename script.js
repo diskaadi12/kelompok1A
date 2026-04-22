@@ -161,25 +161,10 @@ function showPengembang() {
 // =======================================================
 // ================= NAVBAR ===============================
 // =======================================================
-homeBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  showHome();
-});
-
-produkBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  showProduk();
-});
-
-tentangBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  showTentang();
-});
-
-pengembangBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  showPengembang();
-});
+homeBtn.onclick = () => showHome();
+produkBtn.onclick = () => showProduk();
+tentangBtn.onclick = () => showTentang();
+pengembangBtn.onclick = () => showPengembang();
 
 // =======================================================
 // ================= HALAMAN AWAL =========================
