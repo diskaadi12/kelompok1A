@@ -161,10 +161,25 @@ function showPengembang() {
 // =======================================================
 // ================= NAVBAR ===============================
 // =======================================================
-homeBtn.onclick = showHome;
-produkBtn.onclick = showProduk;
-tentangBtn.onclick = showTentang;
-pengembangBtn.onclick = showPengembang;
+homeBtn.onclick = function(e) {
+  e.preventDefault();
+  showHome();
+};
+
+produkBtn.onclick = function(e) {
+  e.preventDefault();
+  showProduk();
+};
+
+tentangBtn.onclick = function(e) {
+  e.preventDefault();
+  showTentang();
+};
+
+pengembangBtn.onclick = function(e) {
+  e.preventDefault();
+  showPengembang();
+};
 
 // =======================================================
 // ================= HALAMAN AWAL =========================
