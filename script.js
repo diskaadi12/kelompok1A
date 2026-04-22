@@ -4,11 +4,9 @@ const homeBtn = document.getElementById("homeBtn");
 const produkBtn = document.getElementById("produkBtn");
 const tentangBtn = document.getElementById("tentangBtn");
 const pengembangBtn = document.getElementById("pengembangBtn");
-const pengembangModal = document.getElementById("pengembangModal");
-const closePengembang = document.getElementById("closePengembang");
 
 // =======================================================
-// =============== HALAMAN HOME ===========================
+// ================= HALAMAN HOME =========================
 // =======================================================
 function showHome() {
   content.innerHTML = `
@@ -23,7 +21,7 @@ function showHome() {
 }
 
 // =======================================================
-// =============== HALAMAN PRODUK (KATEGORI) =============
+// ================= HALAMAN PRODUK =======================
 // =======================================================
 function showProduk() {
   content.innerHTML = `
@@ -38,7 +36,6 @@ function showProduk() {
   </div>`;
 }
 
-// ===== TEMPLATE KATEGORI CARD =====
 function createCategoryCard(title, img, onClick) {
   return `
   <div class="kategori-card" onclick="${onClick}">
@@ -48,7 +45,7 @@ function createCategoryCard(title, img, onClick) {
 }
 
 // =======================================================
-// =============== HALAMAN PRODUK DETAIL =================
+// ================= DETAIL PRODUK ========================
 // =======================================================
 function showBucket() {
   renderProductPage("Koleksi Bucket Kami", [
@@ -89,16 +86,13 @@ function showPigura() {
   ]);
 }
 
-// ===== TEMPLATE PRODUK GRID =====
 function renderProductPage(title, products) {
   let items = products.map(p => createProductCard(p[0], p[1], p[2])).join("");
   content.innerHTML = `
   <div class="fade-in">
     <h2>${title}</h2>
     <div class="produk-grid">${items}</div>
-    <div class="kembali-wrapper">
-      <button class="back-btn" onclick="showProduk()">← Kembali</button>
-    </div>
+    <button class="back-btn" onclick="showProduk()">← Kembali</button>
   </div>`;
 }
 
@@ -113,7 +107,7 @@ function createProductCard(name, img, price) {
 }
 
 // =======================================================
-// =============== FUNGSI PESAN PRODUK ===================
+// ================= PESAN PRODUK =========================
 // =======================================================
 function pesanProduk(namaProduk) {
   const pesan = `Halo Masycraft! Saya ingin memesan ${namaProduk}.`;
@@ -122,73 +116,20 @@ function pesanProduk(namaProduk) {
 }
 
 // =======================================================
-// =============== HALAMAN TENTANG KAMI ==================
+// ================= TENTANG ==============================
 // =======================================================
 function showTentang() {
   content.innerHTML = `
   <div class="tentang fade-in">
     <h2>Tentang Kami</h2>
     <p><strong>Masycraft</strong> adalah usaha kreatif dari Blitar yang berfokus pada pembuatan bucket bunga, snack, boneka, dan parsel custom.</p>
-    <p>Kami percaya setiap hadiah membawa kebahagiaan, dan kami ingin membantu pelanggan mengekspresikan kasih sayang melalui desain bucket terbaik.</p>
+    <p>Kami percaya setiap hadiah membawa kebahagiaan.</p>
   </div>`;
 }
 
 // =======================================================
-// =============== MODAL PENGEMBANG ======================
+// ================= PENGEMBANG ===========================
 // =======================================================
-pengembangBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  showPengembang();
-});
-closePengembang.addEventListener("click", () => pengembangModal.classList.remove("show"));
-pengembangModal.addEventListener("click", (e) => {
-  if (e.target === pengembangModal) pengembangModal.classList.remove("show");
-});
-
-// === Tambahan: Link ke Website Pribadi Pengembang ===
-document.addEventListener("DOMContentLoaded", () => {
-  const devLinks = [
-    { selector: 'img[alt="Diska"]', url: "https://diskaadi12.github.io/p-webb/home.html" },
-    { selector: 'img[alt="Ratna"]', url: "https://ratnarealme666-netizen.github.io/web/" },
-    { selector: 'img[alt="Coky"]', url: "https://santosocoky-ai.github.io/pwebb/" }
-  ];
-
-  devLinks.forEach(dev => {
-    const el = document.querySelector(dev.selector);
-    if (el) {
-      el.style.cursor = "pointer";
-      el.addEventListener("click", () => {
-        window.open(dev.url, "_blank");
-        pengembangModal.classList.remove("show"); // Tutup modal setelah klik
-      });
-    }
-  });
-});
-
-// =======================================================
-// =============== NAVBAR LISTENER =======================
-// =======================================================
-homeBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  pengembangModal.classList.remove("show"); // tutup modal
-  showHome();
-});
-
-produkBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  pengembangModal.classList.remove("show");
-  showProduk();
-});
-
-tentangBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  pengembangModal.classList.remove("show");
-  showTentang();
-});
-// =======================================================
-// =============== HALAMAN AWAL ==========================
-// =======================================================
-showHome();
 function showPengembang() {
   content.innerHTML = `
   <div class="fade-in">
@@ -216,3 +157,31 @@ function showPengembang() {
     </div>
   </div>`;
 }
+
+// =======================================================
+// ================= NAVBAR ===============================
+// =======================================================
+homeBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  showHome();
+});
+
+produkBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  showProduk();
+});
+
+tentangBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  showTentang();
+});
+
+pengembangBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  showPengembang();
+});
+
+// =======================================================
+// ================= HALAMAN AWAL =========================
+// =======================================================
+showHome();
