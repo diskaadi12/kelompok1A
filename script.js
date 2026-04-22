@@ -161,11 +161,10 @@ function showPengembang() {
 // =======================================================
 // ================= NAVBAR ===============================
 // =======================================================
-homeBtn.onclick = () => showHome();
-produkBtn.onclick = () => showProduk();
-tentangBtn.onclick = () => showTentang();
-pengembangBtn.onclick = () => showPengembang();
-
+homeBtn.onclick = showHome;
+produkBtn.onclick = showProduk;
+tentangBtn.onclick = showTentang;
+pengembangBtn.onclick = showPengembang;
 // =======================================================
 // ================= HALAMAN AWAL =========================
 // =======================================================
