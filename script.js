@@ -8,30 +8,14 @@ const pengembangBtn = document.getElementById("pengembangBtn");
 // =======================================================
 // ================= HALAMAN HOME =========================
 // =======================================================
-function showPengembang() {
+function showHome() {
   content.innerHTML = `
-  <div class="fade-in">
-    <h2>Tim Pengembang</h2>
-    <div class="pengembang-grid">
-
-      <div class="dev-card">
-        <img src="img/diska.jpg">
-        <h3>Diska Adi Pratama</h3>
-        <p>Ngadeg Jejegg</p>
-      </div>
-
-      <div class="dev-card">
-        <img src="img/ratna.jpg">
-        <h3>Habiba Ratna Safitri</h3>
-        <p>Tetap Semangatt</p>
-      </div>
-
-      <div class="dev-card">
-        <img src="img/cokyy.jpg">
-        <h3>Coky Budi Santoso</h3>
-        <p>Sabarr, Smk Bisa</p>
-      </div>
-
+  <div class="home-content fade-in">
+    <img src="img/produk.png" alt="Masycraft">
+    <div class="text">
+      <h2>Selamat Datang di Masycraft</h2>
+      <p>Kami menyediakan berbagai bucket kreatif untuk momen spesialmu.</p>
+      <p>Temukan hadiah terbaik di sini!</p>
     </div>
   </div>`;
 }
@@ -181,6 +165,7 @@ homeBtn.onclick = showHome;
 produkBtn.onclick = showProduk;
 tentangBtn.onclick = showTentang;
 pengembangBtn.onclick = showPengembang;
+
 // =======================================================
 // ================= HALAMAN AWAL =========================
 // =======================================================
