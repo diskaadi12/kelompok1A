@@ -167,19 +167,21 @@ document.addEventListener("DOMContentLoaded", () => {
 // =======================================================
 homeBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  pengembangModal.classList.remove("show"); // tutup modal
   showHome();
 });
 
 produkBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  pengembangModal.classList.remove("show");
   showProduk();
 });
 
 tentangBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  pengembangModal.classList.remove("show");
   showTentang();
 });
-
 // =======================================================
 // =============== HALAMAN AWAL ==========================
 // =======================================================
