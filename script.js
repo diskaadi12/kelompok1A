@@ -8,14 +8,30 @@ const pengembangBtn = document.getElementById("pengembangBtn");
 // =======================================================
 // ================= HALAMAN HOME =========================
 // =======================================================
-function showHome() {
+function showPengembang() {
   content.innerHTML = `
-  <div class="home-content fade-in">
-    <img src="img/produk.png" alt="Bucket Masycraft">
-    <div class="text">
-      <h2>Selamat Datang di Masycraft</h2>
-      <p>Kami menyediakan berbagai jenis bucket bunga, hadiah, dan parsel dengan desain kreatif untuk berbagai momen spesialmu.</p>
-      <p>Temukan inspirasi hadiah terbaik hanya di Masycraft!</p>
+  <div class="fade-in">
+    <h2>Tim Pengembang</h2>
+    <div class="pengembang-grid">
+
+      <div class="dev-card">
+        <img src="img/diska.jpg">
+        <h3>Diska Adi Pratama</h3>
+        <p>Ngadeg Jejegg</p>
+      </div>
+
+      <div class="dev-card">
+        <img src="img/ratna.jpg">
+        <h3>Habiba Ratna Safitri</h3>
+        <p>Tetap Semangatt</p>
+      </div>
+
+      <div class="dev-card">
+        <img src="img/cokyy.jpg">
+        <h3>Coky Budi Santoso</h3>
+        <p>Sabarr, Smk Bisa</p>
+      </div>
+
     </div>
   </div>`;
 }
