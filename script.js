@@ -165,9 +165,20 @@ document.addEventListener("DOMContentLoaded", () => {
 // =======================================================
 // =============== NAVBAR LISTENER =======================
 // =======================================================
-homeBtn.addEventListener("click", showHome);
-produkBtn.addEventListener("click", showProduk);
-tentangBtn.addEventListener("click", showTentang);
+homeBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  showHome();
+});
+
+produkBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  showProduk();
+});
+
+tentangBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  showTentang();
+});
 
 // =======================================================
 // =============== HALAMAN AWAL ==========================
