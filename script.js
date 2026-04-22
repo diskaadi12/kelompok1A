@@ -136,7 +136,10 @@ function showTentang() {
 // =======================================================
 // =============== MODAL PENGEMBANG ======================
 // =======================================================
-pengembangBtn.addEventListener("click", () => pengembangModal.classList.add("show"));
+pengembangBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  showPengembang();
+});
 closePengembang.addEventListener("click", () => pengembangModal.classList.remove("show"));
 pengembangModal.addEventListener("click", (e) => {
   if (e.target === pengembangModal) pengembangModal.classList.remove("show");
