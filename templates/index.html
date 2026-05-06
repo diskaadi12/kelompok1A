@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Masycraft - Bucket Kreatif</title>
+
+  <!-- CSS Flask -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#" id="homeBtn">HOME</a>
+    <a href="#" id="produkBtn">PRODUK</a>
+    <a href="#" id="tentangBtn">TENTANG KAMI</a>
+    <a href="#" id="pengembangBtn">PENGEMBANG</a>
+  </div> 
+
+  <!-- Konten utama -->
+  <div id="content" class="container"></div>
+
+  <!-- ================= TEMPLATE HOME ================= -->
+  <template id="homeTemplate">
+    <div class="fade-in">
+      <h2>Selamat Datang di Masycraft</h2>
+      <p>Kami menyediakan bucket kreatif untuk berbagai momen spesial 🎁</p>
+
+      <div class="home-highlight">
+        <p>🌸 Bucket Bunga</p>
+        <p>🍫 Bucket Snack</p>
+        <p>🧸 Bucket Boneka</p>
+      </div>
+    </div>
+  </template>
+
+  <!-- ================= TEMPLATE PRODUK ================= -->
+  <template id="produkTemplate">
+    <div class="fade-in">
+      <h2>Produk Kami</h2>
+
+      <div class="produk-grid">
+
+        <div class="produk-card">
+          <img src="{{ url_for('static', filename='img/produk1.jpg') }}">
+          <h3>Bucket Bunga</h3>
+          <p>Rp 50.000</p>
+        </div>
+
+        <div class="produk-card">
+          <img src="{{ url_for('static', filename='img/produk2.jpg') }}">
+          <h3>Bucket Snack</h3>
+          <p>Rp 45.000</p>
+        </div>
+
+        <div class="produk-card">
+          <img src="{{ url_for('static', filename='img/produk3.jpg') }}">
+          <h3>Bucket Boneka</h3>
+          <p>Rp 60.000</p>
+        </div>
+
+      </div>
+
+      <button onclick="showHome()" class="back-btn">← Kembali</button>
+    </div>
+  </template>
+
+  <!-- ================= TEMPLATE PENGEMBANG ================= -->
+  <template id="pengembangTemplate">
+    <div class="fade-in">
+      <h2>Tim Pengembang</h2>
+
+      <div class="pengembang-grid">
+
+        <div class="dev-card">
+          <a href="https://diskaadi12.github.io/p-webb/home.html" target="_blank">
+            <img src="{{ url_for('static', filename='img/diska.jpg') }}">
+            <h3>Diska Adi Pratama</h3>
+            <p>Jangan pernah menyerah, memulai adalah selalu hal yang tersulit</p>
+          </a>
+        </div>
+
+        <div class="dev-card">
+          <a href="https://ratnarealme666-netizen.github.io/web/" target="_blank">
+            <img src="{{ url_for('static', filename='img/ratna.jpg') }}">
+            <h3>Habiba Ratna Safitri</h3>
+            <p>Kita belajar dari kegagalan, bukan dari kesuksesan</p>
+          </a>
+        </div>
+
+        <div class="dev-card">
+          <a href="https://santosocoky-ai.github.io/pwebb/" target="_blank">
+            <img src="{{ url_for('static', filename='img/cokyy.jpg') }}">
+            <h3>Coky Budi Santoso</h3>
+            <p>Lakukan yang terbaik di semua kesempatan yang kamu miliki.</p>
+          </a>
+        </div>
+
+      </div>
+
+      <button onclick="showHome()" class="back-btn">← Kembali</button>
+    </div>
+  </template>
+
+  <!-- ================= TEMPLATE TENTANG ================= -->
+  <template id="tentangTemplate">
+    <div class="tentang fade-in">
+      <h2>Tentang Kami</h2>
+
+      <div class="visi-misi">
+        <div class="visi">
+          <h3>🌸 Visi</h3>
+          <p>Menjadi brand lokal terpercaya yang menghadirkan produk kreatif penuh makna dan kebahagiaan di setiap momen.</p>
+        </div>
+
+        <div class="misi">
+          <h3>💫 Misi</h3>
+          <ul>
+            <li>Mengutamakan kualitas dan keunikan desain produk.</li>
+            <li>Mendukung kreativitas anak muda Indonesia.</li>
+            <li>Menyediakan layanan ramah, cepat, dan terpercaya.</li>
+            <li>Berinovasi dalam setiap karya untuk kepuasan pelanggan.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sejarah">
+  <h3>📜 Sejarah</h3>
+
+  <p>
+    <b>Masycraft</b> adalah usaha kreatif dari Blitar yang berfokus pada pembuatan
+    bucket bunga, snack, boneka, dan parsel custom.
+  </p>
+
+  <p>
+    Masycraft berdiri pada tahun 2020 sebagai usaha rumahan di Blitar.
+    Usaha ini didirikan setelah masa pandemi Covid-19 dan saat ini memiliki
+    3 orang karyawan.
+  </p>
+
+  <p>
+    Dengan semangat kreativitas dan kerja sama tim, kini kami tumbuh menjadi
+    penyedia bucket dan parsel yang dipercaya banyak pelanggan di seluruh Indonesia.
+  </p>
+</div>
+
+<div class="kontak">
+  <h3>📞 Kontak Kami</h3>
+
+  <p>📧 Email: masycraft@gmail.com</p>
+  <p>📷 Instagram: @masycraft.id</p>
+  <p>📍 Alamat: Jl. Raya Sidodadi, Dusun Klepon, Sidodadi, Kec. Garum, Kabupaten Blitar</p>
+</div>
+
+      <button onclick="showHome()" class="back-btn">← Kembali</button>
+    </div>
+  </template>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>📞 +62 856-4866-7716</span>
+    <span>📷 @masycraft.blitar</span>
+  </div>
+
+  <!-- JS Flask -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

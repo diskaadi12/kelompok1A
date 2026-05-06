@@ -1,0 +1,526 @@
+/* ===== Dasar ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f7faff;
+  color: #000;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  text-align: center;
+  background-color: #eabdbd;
+  padding: 15px 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #001b7a;
+  margin: 0 20px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.navbar a:hover {
+  color: #d63384;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 1000px; /* 🔥 biar tidak terlalu lebar */
+  margin: auto;
+  padding: 60px 20px 120px;
+}
+
+/* ===== Home ===== */
+/* ===== HOME MODERN ===== */
+.home-modern {
+  padding: 40px 20px;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 450px;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  color: #d63384;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 18px;
+  color: #001b7a;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.desc {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.btn-primary {
+  background: #d63384;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #d63384;
+  color: #d63384;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #a82663;
+}
+
+.btn-secondary:hover {
+  background: #d63384;
+  color: white;
+}
+
+/* GAMBAR */
+.hero-img img {
+  width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* KEUNGGULAN */
+.keunggulan {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.unggul-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.unggul-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== PRODUK (FIX GANDENG) ===== */
+.produk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
+  justify-content: center; /* 🔥 ini kunci biar ke tengah */
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.produk-item {
+  max-width: 260px;
+  width: 100%;
+  margin: auto; /* 🔥 biar tidak nempel */
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.produk-item:hover {
+  transform: translateY(-8px);
+}
+
+/* ===== GAMBAR PRODUK ===== */
+.produk-item img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ===== TEKS ===== */
+.produk-item p {
+  margin-top: 10px;
+  color: #d63384;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ===== HARGA ===== */
+.harga-box {
+  margin-top: 8px;
+  background: #fff0f6;
+  border-radius: 25px;
+  border: 2px solid #d63384;
+  padding: 8px;
+  color: #d63384;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.back-btn {
+  display: block;
+  margin: 30px auto 0 auto;
+  background: linear-gradient(135deg, #001b7a, #d63384);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== KATEGORI ===== */
+.kategori-grid {
+  display: flex;              /* 🔥 pakai flex biar sejajar */
+  justify-content: center;    /* tengah */
+  align-items: stretch;
+  gap: 30px;                  /* jarak antar card */
+  flex-wrap: wrap;            /* kalau layar kecil baru turun */
+  margin-top: 30px;
+}
+
+.kategori-card {
+  width: 200px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.kategori-card:hover {
+  transform: translateY(-5px);
+}
+
+.kategori-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.kategori-card {
+  width: 200px;               /* ukuran fix biar rapi */
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.kategori-card:hover {
+  transform: translateY(-5px);
+}
+
+.kategori-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.kategori-card h3 {
+  color: #d63384;
+  margin-top: 10px;
+}
+
+/* ===== BUTTON ===== */
+.btn-pesan {
+  background-color: #d63384;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-pesan:hover {
+  background-color: #a82663;
+}
+
+.back-btn {
+  background-color: #001b7a;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: #d63384;
+}
+
+/* ===== Tentang ===== */
+/* ===== TENTANG (ELEGAN STYLE) ===== */
+.tentang {
+  max-width: 800px;
+  margin: auto;
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  line-height: 1.8;
+}
+
+/* JUDUL UTAMA */
+.tentang h2 {
+  text-align: center;
+  color: #d63384;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* SUB JUDUL */
+.tentang h3 {
+  color: #001b7a;
+  margin-bottom: 10px;
+}
+
+/* VISI MISI BOX */
+.visi-misi {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.visi, .misi {
+  flex: 1;
+  background: #fff0f6;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+}
+
+/* PARAGRAF */
+.tentang p {
+  color: #444;
+  font-size: 15px;
+  text-align: justify;
+}
+
+/* LIST MISI */
+.tentang ul {
+  padding-left: 18px;
+}
+
+.tentang ul li {
+  margin-bottom: 8px;
+  color: #444;
+}
+
+/* SEJARAH */
+.sejarah {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f9fbff;
+  border-radius: 15px;
+}
+
+/* KONTAK */
+.kontak {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff0f6;
+  border-radius: 15px;
+}
+
+/* SPASI ANTAR PARAGRAF */
+.sejarah p {
+  margin-bottom: 12px;
+}
+
+/* ===== PENGEMBANG (UPGRADE MODERN) ===== */
+.pengembang-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.dev-card {
+  width: 230px;
+  background: linear-gradient(145deg, #ffffff, #fff0f6);
+  border-radius: 20px;
+  padding: 25px 15px;
+  text-align: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border: 1px solid rgba(214, 51, 132, 0.1);
+
+  transition: 0.3s ease;
+}
+
+.dev-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(214, 51, 132, 0.2);
+}
+
+/* FOTO */
+.dev-card img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #d63384;
+  margin-bottom: 10px;
+}
+
+/* NAMA */
+.dev-card h3 {
+  font-size: 16px;
+  color: #d63384;
+  margin: 10px 0 5px;
+}
+
+/* DESKRIPSI */
+.dev-card p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* LINK */
+.dev-card a {
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #001b7a;
+  font-weight: bold;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.dev-card a:hover {
+  color: #d63384;
+}
+
+/* ===== Animasi ===== */
+.fade-in {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  background: #eabdbd;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ===== Responsive HP ===== */
+@media (max-width: 600px) {
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-content .text {
+    text-align: center;
+  }
+}
+
+/* ===== FIX JUDUL TENGAH ===== */
+h2 {
+  text-align: center;
+  width: 100%;
+}
+
+/* ===== FIX BUTTON KEMBALI TENGAH ===== */
+.back-btn {
+  display: block;
+  margin: 30px auto 0 auto; /* auto kiri kanan = tengah */
+}
+
+/* ===== WRAPPER BIAR SEMUA KONTEN CENTER ===== */
+.fade-in {
+  text-align: center;
+}
+
+/* ===== OPTIONAL: biar grid makin rapi tengah ===== */
+.produk-grid {
+  
+  justify-content: center;
+}
+
+.cta button {
+  background-color: #ff4d8d; /* warna pink */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin-right: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta button:hover {
+  background-color: #e6005c;
+  transform: scale(1.05);
+}
+
+.produk-item button {
+  background: linear-gradient(135deg, #ff4d8d, #6a5cff);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 8px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.produk-item button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
