@@ -119,66 +119,146 @@ function showPigura() {
 }
 
 // ===============================
+// POPUP FORM
+// ===============================
+
+// buka popup
+function openPopup(namaProduk, hargaProduk) {
+
+  document.getElementById("popupForm").style.display = "flex";
+
+  // isi otomatis
+  document.getElementById("jenisPesanan").value = namaProduk;
+  document.getElementById("harga").value = hargaProduk;
+}
+
+// tutup popup
+function closePopup() {
+  document.getElementById("popupForm").style.display = "none";
+}
+
+// klik area hitam = tutup
+window.onclick = function(event) {
+
+  const popup = document.getElementById("popupForm");
+
+  if (event.target == popup) {
+    popup.style.display = "none";
+  }
+};
+
+// ===============================
 // RENDER PRODUK
 // ===============================
 function renderProductPage(title, products) {
-  let html = products.map(p => createProductCard(p[0], p[1], p[2])).join("");
+
+  let html = products.map(p => `
+  
+    <div class="produk-item">
+
+      <img src="${IMG_PATH}${p[1]}">
+
+      <p>${p[0]}</p>
+
+      <div class="harga-box">
+        Rp ${p[2]}
+      </div>
+
+      <button 
+        class="btn-pesan"
+        onclick="openPopup('${p[0]}','${p[2]}')">
+
+        Pesan
+
+      </button>
+
+    </div>
+
+  `).join("");
 
   content.innerHTML = `
   <div class="fade-in">
+
     <h2>${title}</h2>
 
     <div class="produk-grid">
       ${html}
     </div>
 
-    <button onclick="showProduk()" class="back-btn">← Kembali</button>
-  </div>`;
-}
-
-function createProductCard(nama, img, harga) {
-  return `
-  <div class="produk-item">
-    <img src="${IMG_PATH}${img}">
-    <p>${nama}</p>
-    <div>Rp ${harga}</div>
-
-    <button onclick="pesanProduk('${nama}','${harga}')">
-      Pesan
+    <button onclick="showProduk()" class="back-btn">
+      ← Kembali
     </button>
+
   </div>`;
 }
 
 // ===============================
-// PESAN → DATABASE + WHATSAPP
+// KIRIM PESANAN
 // ===============================
-function pesanProduk(namaProduk, harga) {
-  let nama = prompt("Nama:");
-  let alamat = prompt("Alamat:");
+// ===============================
+// KIRIM PESANAN KE DATABASE
+// ===============================
+function kirimPesanan(event) {
 
-  if (!nama || !alamat) {
-    alert("Isi semua data!");
-    return;
-  }
+  event.preventDefault();
 
+  // ambil data form
+  const dataPesanan = {
+
+    nama: document.getElementById("nama").value,
+
+    jenis: document.getElementById("jenisPesanan").value,
+
+    alamat: document.getElementById("alamat").value,
+
+    nohp: document.getElementById("nohp").value,
+
+    metode: document.getElementById("metode").value,
+
+    hari: document.getElementById("hari").value,
+
+    tanggal: document.getElementById("tanggal").value,
+
+    jam: document.getElementById("jam").value,
+
+    harga: document.getElementById("harga").value,
+
+    request: document.getElementById("request").value
+  };
+
+  // kirim data ke Flask
   fetch("/pesan", {
+
     method: "POST",
+
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-      nama: nama,
-      alamat: alamat,
-      produk: namaProduk,
-      harga: harga
-    })
-  })
-  .then(res => res.json())
-  .then(data => {
-    alert("Pesanan tersimpan ✅");
 
-    let pesanWA = `Halo Masycraft, saya ${nama} pesan ${namaProduk}`;
-    window.open(`https://wa.me/6285648667716?text=${encodeURIComponent(pesanWA)}`);
+    body: JSON.stringify(dataPesanan)
+
+  })
+
+  .then(response => response.json())
+
+  .then(data => {
+
+    alert("Pesanan berhasil disimpan ✅");
+
+    // tutup popup
+    closePopup();
+
+    // reset form
+    document.getElementById("formPesanan").reset();
+
+  })
+
+  .catch(error => {
+
+    console.log(error);
+
+    alert("Terjadi kesalahan ❌");
+
   });
 }
 

@@ -46,23 +46,40 @@
           <img src="{{ url_for('static', filename='img/produk1.jpg') }}">
           <h3>Bucket Bunga</h3>
           <p>Rp 50.000</p>
+
+          <button class="btn-pesan"
+                  onclick="pesanProduk('Bucket Bunga', '50.000')">
+            Pesan
+          </button>
         </div>
 
         <div class="produk-card">
           <img src="{{ url_for('static', filename='img/produk2.jpg') }}">
           <h3>Bucket Snack</h3>
           <p>Rp 45.000</p>
+
+          <button class="btn-pesan"
+                  onclick="pesanProduk('Bucket Snack', '45.000')">
+            Pesan
+          </button>
         </div>
 
         <div class="produk-card">
           <img src="{{ url_for('static', filename='img/produk3.jpg') }}">
           <h3>Bucket Boneka</h3>
           <p>Rp 60.000</p>
+
+          <button class="btn-pesan"
+                  onclick="pesanProduk('Bucket Boneka', '60.000')">
+            Pesan
+          </button>
         </div>
 
       </div>
 
-      <button onclick="showHome()" class="back-btn">← Kembali</button>
+      <button onclick="showHome()" class="back-btn">
+        ← Kembali
+      </button>
     </div>
   </template>
 
@@ -99,7 +116,9 @@
 
       </div>
 
-      <button onclick="showHome()" class="back-btn">← Kembali</button>
+      <button onclick="showHome()" class="back-btn">
+        ← Kembali
+      </button>
     </div>
   </template>
 
@@ -109,13 +128,19 @@
       <h2>Tentang Kami</h2>
 
       <div class="visi-misi">
+
         <div class="visi">
           <h3>🌸 Visi</h3>
-          <p>Menjadi brand lokal terpercaya yang menghadirkan produk kreatif penuh makna dan kebahagiaan di setiap momen.</p>
+
+          <p>
+            Menjadi brand lokal terpercaya yang menghadirkan produk
+            kreatif penuh makna dan kebahagiaan di setiap momen.
+          </p>
         </div>
 
         <div class="misi">
           <h3>💫 Misi</h3>
+
           <ul>
             <li>Mengutamakan kualitas dan keunikan desain produk.</li>
             <li>Mendukung kreativitas anak muda Indonesia.</li>
@@ -123,39 +148,179 @@
             <li>Berinovasi dalam setiap karya untuk kepuasan pelanggan.</li>
           </ul>
         </div>
+
       </div>
 
       <div class="sejarah">
-  <h3>📜 Sejarah</h3>
 
-  <p>
-    <b>Masycraft</b> adalah usaha kreatif dari Blitar yang berfokus pada pembuatan
-    bucket bunga, snack, boneka, dan parsel custom.
-  </p>
+        <h3>📜 Sejarah</h3>
 
-  <p>
-    Masycraft berdiri pada tahun 2020 sebagai usaha rumahan di Blitar.
-    Usaha ini didirikan setelah masa pandemi Covid-19 dan saat ini memiliki
-    3 orang karyawan.
-  </p>
+        <p>
+          <b>Masycraft</b> adalah usaha kreatif dari Blitar yang
+          berfokus pada pembuatan bucket bunga, snack,
+          boneka, dan parsel custom.
+        </p>
 
-  <p>
-    Dengan semangat kreativitas dan kerja sama tim, kini kami tumbuh menjadi
-    penyedia bucket dan parsel yang dipercaya banyak pelanggan di seluruh Indonesia.
-  </p>
-</div>
+        <p>
+          Masycraft berdiri pada tahun 2020 sebagai usaha rumahan di Blitar.
+        </p>
 
-<div class="kontak">
-  <h3>📞 Kontak Kami</h3>
+      </div>
 
-  <p>📧 Email: masycraft@gmail.com</p>
-  <p>📷 Instagram: @masycraft.id</p>
-  <p>📍 Alamat: Jl. Raya Sidodadi, Dusun Klepon, Sidodadi, Kec. Garum, Kabupaten Blitar</p>
-</div>
+      <div class="kontak">
 
-      <button onclick="showHome()" class="back-btn">← Kembali</button>
+        <h3>📞 Kontak Kami</h3>
+
+        <p>📧 Email: masycraft@gmail.com</p>
+        <p>📷 Instagram: @masycraft.id</p>
+
+      </div>
+
+      <button onclick="showHome()" class="back-btn">
+        ← Kembali
+      </button>
+
     </div>
   </template>
+
+  <!-- ================= POPUP FORM ================= -->
+  <div id="popupForm" class="popup-form">
+
+    <div class="popup-content">
+
+      <span class="close-popup" onclick="closePopup()">
+        &times;
+      </span>
+
+      <h2>Formulir Pesanan</h2>
+
+ <form id="formPesanan" onsubmit="kirimPesanan(event)">
+
+        <!-- Nama -->
+        <label>Nama Lengkap</label>
+
+        <input
+          type="text"
+          id="nama"
+          placeholder="Masukkan nama lengkap"
+          required
+        >
+
+        <!-- Jenis Pesanan -->
+        <label>Jenis Pesanan</label>
+
+        <input
+          type="text"
+          id="jenisPesanan"
+          readonly
+        >
+
+        <!-- Alamat -->
+        <label>Alamat</label>
+
+        <textarea
+          id="alamat"
+          placeholder="Masukkan alamat lengkap"
+          required
+        ></textarea>
+
+        <!-- No HP -->
+        <label>No HP</label>
+
+        <input
+          type="tel"
+          id="nohp"
+          placeholder="08xxxxxxxxxx"
+          required
+        >
+
+        <!-- Metode -->
+        <label>Diantar / Diambil</label>
+
+        <select id="metode" required>
+          <option value="">Pilih</option>
+          <option value="Diantar">Diantar</option>
+          <option value="Diambil">Diambil</option>
+        </select>
+
+        <!-- Hari & Tanggal -->
+        <div class="form-row">
+
+          <div>
+            <label>Hari</label>
+
+            <select id="hari" required>
+              <option value="">Pilih Hari</option>
+              <option>Senin</option>
+              <option>Selasa</option>
+              <option>Rabu</option>
+              <option>Kamis</option>
+              <option>Jumat</option>
+              <option>Sabtu</option>
+              <option>Minggu</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Tanggal</label>
+
+            <input
+              type="date"
+              id="tanggal"
+              required
+            >
+          </div>
+
+        </div>
+
+        <!-- Jam -->
+        <label>Jam Antar / Ambil</label>
+
+        <input
+          type="time"
+          id="jam"
+          required
+        >
+
+        <!-- Harga -->
+        <label>Harga</label>
+
+        <input
+          type="text"
+          id="harga"
+          readonly
+        >
+
+        <!-- Request -->
+        <label>Request Tambahan</label>
+
+        <textarea
+          id="request"
+          placeholder="Tuliskan request tambahan..."
+        ></textarea>
+
+        <!-- Tombol -->
+        <div class="popup-buttons">
+
+ <button type="submit" class="btn-kirim">
+  Kirim Pesanan
+</button>
+
+          <button
+            type="button"
+            class="batal-btn"
+            onclick="closePopup()"
+          >
+            Batal
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
 
   <!-- Footer -->
   <div class="footer">
